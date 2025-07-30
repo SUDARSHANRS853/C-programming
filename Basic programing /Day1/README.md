@@ -123,5 +123,24 @@ Output
 enter the year:2022
 the year 2022 is not leap year
 ```
+7. WAP to find power of 2^N using left shift operator.
+```
+#include<stdio.h>
+int main()
+{
+    int n,result;
+    printf("enter the values of N(for 2^N):");
+    scanf("%d",&n);
+    result=1<<n;
+    printf("2^%d=%d\n",n,result);
+    return 0;
+    
+}
+```
+Output 
+```
+enter the values of N(for 2^N):3
+2^3=8
+```
 
 
