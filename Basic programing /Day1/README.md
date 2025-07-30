@@ -66,4 +66,22 @@ enter the first character A
 enter the second character B
 difference between 'A' and 'B' is:0
  ```
+## Write a program to convert temperature from Celsius to Fahrenheit 
+```
+#include <stdio.h>
+int main()
+{
+    float celsius,fahrenheit;
+    printf("enter the temperature in celsius");
+    scanf("%f",&celsius);
+    fahrenheit=(celsius*9/5)+32;
+    printf("temperature in fahrenheit:%.2f\n",fahrenheit);
+    return 0;
+}
+```
+Output
+```
+enter the temperature in celsius35
+temperature in fahrenheit:95.00
+```
 
