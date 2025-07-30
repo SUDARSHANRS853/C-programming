@@ -66,7 +66,7 @@ enter the first character A
 enter the second character B
 difference between 'A' and 'B' is:0
  ```
-## Write a program to convert temperature from Celsius to Fahrenheit 
+4. ## Write a program to convert temperature from Celsius to Fahrenheit 
 ```
 #include <stdio.h>
 int main()
@@ -84,7 +84,7 @@ Output
 enter the temperature in celsius35
 temperature in fahrenheit:95.00
 ```
-## Check if entered number is even or odd.
+5. ## Check if entered number is even or odd.
 ```
 #include<stdio.h>
 int main(){
