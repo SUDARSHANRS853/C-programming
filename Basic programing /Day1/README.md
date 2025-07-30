@@ -1,4 +1,4 @@
-1. # Conversion  of upper case to lower case
+1. ## Conversion  of upper case to lower case
 ```
 #include <stdio.h>
 
@@ -23,7 +23,7 @@ Output
 enter the upper case valueB
 lower case value b 
 ```
-2. # Calculate the area of circle
+2. ## Calculate the area of circle
 ```
 #include<stdio.h>
 #define pi 3.14
@@ -42,8 +42,7 @@ Output
 nter the radius of circle 2
 area of circle is 12.56
 ```
-3. # Given two character inputs, find number of characters between them. For example, if
-# input is ‘A’ and ‘E’ the output is 3.
+3. ## Given two character inputs, find number of characters between them. For example, if input is ‘A’ and ‘E’ the output is 3.
 ```
 #include<stdio.h>
 #include<stdlib.h>
