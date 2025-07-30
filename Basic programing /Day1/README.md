@@ -84,4 +84,24 @@ Output
 enter the temperature in celsius35
 temperature in fahrenheit:95.00
 ```
+## Check if entered number is even or odd.
+```
+#include<stdio.h>
+int main(){
+    int number;
+    printf("enter an integer ");
+    scanf("%d",&number);
+    if(number%2==0)
+    printf("entered number is even\n",number);
+    else
+    printf("entered number is odd\n",number);
+    return 0;
+}
+```
+Output 
+```
+enter an integer 18
+entered number is even
+```
+
 
