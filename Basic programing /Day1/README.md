@@ -123,7 +123,7 @@ Output
 enter the year:2022
 the year 2022 is not leap year
 ```
-7. WAP to find power of 2^N using left shift operator.
+7. ## WAP to find power of 2^N using left shift operator.
 ```
 #include<stdio.h>
 int main()
@@ -142,5 +142,56 @@ Output
 enter the values of N(for 2^N):3
 2^3=8
 ```
+8. ## Check if given input is a character or integer. (Use integer input within the range 0-9).
+```
+#include<stdio.h>
+int main()
+{
+    char input;
+    printf("enter a single character");
+    scanf("%c",&input);
+    if(input>='0'&& input<='9'){
+    printf("entered number %c is integer\n",input);
+    }
+    else if((input>='A'&&input<='Z')||(input>='a'&& input<='z')){
+        printf("enter number %c is character\n",input);
+    }
+    else{
+    printf("entered number neither character nor integer",input);
+    return 0;
+    }
+}
+```
+Output
+```
+enter a single character:
+5
+entered number 5 is integer
+enter a single character:
+a
+enter number a is character
+enter a single character:
+$
+entered number neither character nor integer
+```
+9. ## Generate two random numbers and find its sum (Hint: use rand() from stdlib.h)
+```
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+
+int main(){
+    int num1,num2,sum;
+    srand(time(0));
+    num1=rand()%100;
+    num2=rand()%100;
+    sum=num1+num2;
+    printf("the frist number:%d\n",num1);
+    printf("the second number:%d\n",num2);
+    printf("the sum of two number is:%d\n",sum);
+    return 0;   
+}
+```
+
 
 
