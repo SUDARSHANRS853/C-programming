@@ -75,7 +75,7 @@ enter the  number
 12344321
 12344321 is a palindrome number.
 ```
-4. ## generate the pattern of right angle triangle using ( * )
+4. ## Generate the pattern of right angle triangle using ( * )
 ```
 #include<stdio.h>
 int main()
@@ -109,7 +109,7 @@ enter the number of rows:10
 *********
 **********
 ```
-5. ## generate the pattern number triangle
+5. ## Generate the pattern number triangle
 ```
 #include<stdio.h>
 int main()
