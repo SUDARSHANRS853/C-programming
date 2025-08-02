@@ -58,7 +58,3 @@ Enter 4 elements:
 Ascending order: 1 2 3 4 
 Descending order:  4  3  2  1 
 ```
-
-
-
-```
