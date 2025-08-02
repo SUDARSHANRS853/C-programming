@@ -156,4 +156,39 @@ enter the 10 different numbers:2 3 4 5 6 4 3 2 2 3
 array after removing duplications:
 23456
 ```
+5. ## WAP to search for a given integer in an array using the linear search technique.
+```
+#include<stdio.h>
+int main()
+{
+    int a[100],n,key,found;
+    printf("enter the number of elements:\n");
+    scanf("%d",&n);
+    printf("enter the %d elements\n",n);
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    printf("enter the number to search:\n");
+    scanf("%d",&key);
+    for(int i=0;i<n;i++)
+    {
+        if(a[i]==key)
+        {
+            printf("the entered %d number is found at position %d(index %d)",key,i+1,i);
+        }
+    }
+}
+```
+Output
+```
+enter the number of elements:
+4
+enter the 4 elements
+1 2 3 4
+enter the number to search:
+4
+the entered number 4 is found at position 4(index 3)
+```
+
 
