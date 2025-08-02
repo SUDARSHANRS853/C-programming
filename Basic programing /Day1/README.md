@@ -192,37 +192,9 @@ int main(){
     return 0;   
 }
 ```
-10. ## Write a C program, which will print two digit numbers whose sum of both digit isnine. e.g. 18,27,36......
-```
-#include<stdio.h>
-int main()
-{
-    int i,num, digit1,digit2;
-    printf("Enter two digit number whose add up to 9:\n");
-    for(num=10;num<=99;num++)
-    {
-        digit1=num/10;
-        digit2=num%10;
-        if(digit1+digit2==9){
-        printf(" %d",num);}
-        
-    }
-    return 0;
-}
-```
 Output
 ```
-Enter two digit number whose add up to 9:
- 18
- 27
- 36
- 45
- 54
- 63
- 72
- 81
- 90
+the frist number:54
+the second number:16
+the sum of two number is:70
 ```
-
-
-
