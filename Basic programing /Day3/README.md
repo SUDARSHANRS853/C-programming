@@ -190,5 +190,54 @@ enter the number to search:
 4
 the entered number 4 is found at position 4(index 3)
 ```
-
+6. WAP to search for a given integer in an array using the binary search technique
+```
+#include<stdio.h>
+int main()
+{
+    int a[100],n,key,low,high,mid,found=0;
+    printf("enter the number of elements:\n");
+    scanf("%d",&n);
+    printf("enter the %d elements\n",n);
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    printf("enter the element to search\n");
+    scanf("%d",&key);
+    low = 0;
+    high = n-1;
+    // found=0;
+    while(low<=high){
+    mid=(low+high)/2;
+    if(a[mid]==key)
+    {
+        printf("entered  number is %d at the position %d(index %d)",key,mid+1,mid);
+        found=1;
+        break;}
+        else if(key<a[mid])
+        {
+            high=mid-1;
+        }
+        else
+        {
+            low=mid+1;
+        }  
+        }
+        if(!found){
+            printf("element %d not found in the array.\n",key);
+        }
+        return 0;
+        }
+```
+Output
+```
+enter the number of elements:
+4
+enter the 4 elements
+1 2 3 4
+enter the element to search
+4
+entered  number is 4 at the position 4(index 3)
+```
 
