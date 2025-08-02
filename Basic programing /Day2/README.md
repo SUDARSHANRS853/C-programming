@@ -75,8 +75,107 @@ enter the  number
 12344321
 12344321 is a palindrome number.
 ```
-4. ##
+4. ## generate the pattern of right angle triangle using ( * )
+```
+#include<stdio.h>
+int main()
+{
+    int i,j,n;
+    printf("enter the number of rows");
+    scanf("%d",&n);
+    for(int i=0;i<=n;i++){
+        for(int j=0;j<i;j++){
+            printf("*");
+            
+        }
+       
+        printf("\n");
+    }
+    return 0;
+}
+```
+Output
+```
+enter the number of rows:10
+
+*
+**
+***
+****
+*****
+******
+*******
+********
+*********
+**********
+```
+5. ## generate the pattern number triangle
+```
+#include<stdio.h>
+int main()
+{
+    int i,j,n;
+    printf("enter the number of rows:");
+    scanf(" %d",&n);
+    for(i=0;i<=n;i++)
+    {
+        for(j=1;j<i;j++)
+        {
+            printf("%d",j);
+            
+        }
+        printf("\n");
+    }
+    return 0;
+}
+```
+Output
+```
+enter the number of rows:10
 
 
+ 1
+ 1 2
+ 1 2 3
+ 1 2 3 4
+ 1 2 3 4 5
+ 1 2 3 4 5 6
+ 1 2 3 4 5 6 7
+ 1 2 3 4 5 6 7 8
+ 1 2 3 4 5 6 7 8 9
+```
+6. ## Generate the pattern of inverted triangle
+```
+#include<stdio.h>
+int main()
+{
+    int i,j,n;
+    printf("enter the number of rows:");
+    scanf("%d",&n);
+    for(i=n;i>=1;i--)
+    {
+        for(j=1;j<i;j++)
+        {
+            printf("%d",j);
+            
+        }
+        printf("\n");
+        
+    }
+    return 0;
+}
+```
+Output
+```
+enter the number of rows:10
+123456789
+12345678
+1234567
+123456
+12345
+1234
+123
+12
+1
+```
 
-``
