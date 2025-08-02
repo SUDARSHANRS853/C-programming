@@ -219,4 +219,44 @@ enter the number of rows:10
   123456789
  12345678910
 ```
+8. ## Generate the 60 degree triangle with star(*)
+```
+#include<stdio.h>
+int main()
+{
+    int i,j,n,space;
+    printf("enter the number of rows:");
+    scanf("%d",&n);
+    for(i=0;i<=n;i++)
+    {
+        for(space=0;space<=n-i;space++)
+        {
+            printf(" ");
+        }
+        for(j=1;j<=i;j++)
+        {
+            printf("* ");
+            
+        }
+        printf("\n");
+        
+        }
+        return 0;
+    }
+```
+Output
+```
+Enter the number of rows:10
+           
+          * 
+         * * 
+        * * * 
+       * * * * 
+      * * * * * 
+     * * * * * * 
+    * * * * * * * 
+   * * * * * * * * 
+  * * * * * * * * * 
+ * * * * * * * * * *
+```
 
