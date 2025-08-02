@@ -82,4 +82,78 @@ Output
 enter two numbers x and y:4 6
 after swaping the numbers x=6 and y=4
 ```
+3. ## WAP to find minimum and maximum elements in a given array using the function int find_max_min(int array[], int size,int *max, int *min);
+```
+#include<stdio.h>
+int find_max_min(int array[],int size ,int*max,int*min){
+*max=array[0];
+*min=array[0];
+for(int i=1;i<size;i++){
+if(array[i]>*max)
+*max=array[i];
+if(array[i]<*min)
+*min=array[i];
+}
+return 0;
+}
+int main()
+{
+int arr[5]={10,5,30,2,15};
+int max,min;
+find_max_min(arr,5,&max,&min);
+printf("max=%d\n",max);
+printf("min=%d\n",min);
+return 0;
+}
+```
+Output
+```
+maximum and minimum numbers are:
+max=30
+min=2
+```
+4. ## WAP to store 10 numbers in an array. Remove the duplicate entries in the array.
+```
+#include<stdio.h>
+int main()
+{
+    int a[10],size=10;
+    printf("enter the 10 different numbers:");
+    for(int i=0;i<size;i++)
+    {
+        scanf("%d",&a[i]);
+        
+    }
+   
+    for(int i=0;i<size;i++)
+    {
+        for(int j=i+1;j<size;j++)
+        {
+            if(a[i]==a[j])
+            {
+                for(int k=j;k<size-1;k++)
+                {
+                    a[k]=a[k+1];
+                    
+                }
+                size--;
+                j--;
+            }
+        }
+    }
+    printf("array after removing duplications:\n");
+    for(int i=0;i<size;i++)
+    {
+        printf("%d",a[i]);
+        
+    }
+    return 0;
+}
+```
+Output
+```
+enter the 10 different numbers:2 3 4 5 6 4 3 2 2 3
+array after removing duplications:
+23456
+```
 
