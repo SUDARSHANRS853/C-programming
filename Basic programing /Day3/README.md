@@ -240,4 +240,63 @@ enter the element to search
 4
 entered  number is 4 at the position 4(index 3)
 ```
+7. ## Write a C program, that reads list of n integer and print sum of product of consecutivenumbers. if n=7 and numbers are 4,5,2,5,6,4,7 then output is 4*5+5*2+2*5+5*6+6*4+4*7 = 122.
+```
+#include<stdio.h>
+int main()
+{
+    int a[100],n,sum=0;
+    printf("enter the number of elements\n");
+    scanf("%d",&n);
+    printf("enter the %d elements\n",n);
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+        
+    }
+    for(int i=0;i<n-1;i++)
+    {
+       sum+=a[i]*a[i+1];
+       
+    }
+    printf("%d", sum);
+    return 0;
+}
+```
+Output
+```
+enter the number of elements
+6
+enter the 6 elements
+1 2 3 4 5 6
+the sum of product of consecutive number is 70
+```
+8. ## WAP to read a string from the user and find the length of string.( Note: Do not usestring.h header file)
+```
+#include <stdio.h>
+
+int main()
+{
+    char str[100];
+    int length = 0;
+
+    printf("Enter a string: ");
+    scanf("%[^\n]", str);  // Reads string with spaces
+
+    // Loop until null character '\0' is encountered
+    while (str[length] != '\0')
+    {
+        length++;
+    }
+
+    printf("Length of the string = %d\n", length);
+
+    return 0;
+}
+```
+Output
+```
+Enter a string: Sudarshan rs gowda
+Length of the string = 18
+```
 
