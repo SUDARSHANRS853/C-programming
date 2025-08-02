@@ -58,3 +58,28 @@ Enter 4 elements:
 Ascending order: 1 2 3 4 
 Descending order:  4  3  2  1 
 ```
+2. ## Swapping the two numbers using function
+```
+#include<stdio.h>
+
+void swap(int *a, int *b){
+int temp;
+temp=*a;
+*a=*b;
+*b=temp;
+}
+int main(){
+int x,y;
+printf("enter two numbers:");
+scanf("%d%d",&x,&y);
+swap(&x,&y);
+printf("after swaping the numbers x=%d and y=%d\n",x,y);
+return 0;
+}
+```
+Output
+```
+enter two numbers x and y:4 6
+after swaping the numbers x=6 and y=4
+```
+
