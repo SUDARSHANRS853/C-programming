@@ -873,6 +873,24 @@ Enter the value of x: 3
 Enter number of terms: 2
 F(x) = 7.500000
 ```
+20. ## Concatenate two integer values using macros
+```
+#include <stdio.h>
+
+// Macro to concatenate two integers
+#define CONCAT(a, b) a##b
+
+int main() {
+    int num = CONCAT(12, 34); // Becomes 1234
+    printf("Concatenated number: %d\n", num);
+    return 0;
+}
+```
+Output
+```
+Concatenated number: 1234
+```
+
 
 
 
