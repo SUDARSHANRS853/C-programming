@@ -694,6 +694,102 @@ Transpose of the Matrix:
 1	3	
 2	4	
 ```
+17. ## Given a matrix of size NxM. Find the sum of each column in the matrix.
+```
+#include <stdio.h>
+
+#define MAX_ROWS 10
+#define MAX_COLS 10
+
+// Function to read matrix
+void readMatrix(int matrix[MAX_ROWS][MAX_COLS], int n, int m) {
+    printf("Enter elements of %dx%d matrix:\n", n, m);
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            printf("Element [%d][%d]: ", i, j);
+            scanf("%d", &matrix[i][j]);
+        }
+    }
+}
+
+// Function to display matrix
+void displayMatrix(int matrix[MAX_ROWS][MAX_COLS], int n, int m) {
+    printf("\nMatrix:\n");
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            printf("%d\t", matrix[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+// Function to compute and print column sums
+void columnSum(int matrix[MAX_ROWS][MAX_COLS], int n, int m) {
+    printf("\nSum of each column:\n");
+    for (int j = 0; j < m; j++) {
+        int sum = 0;
+        for (int i = 0; i < n; i++) {
+            sum += matrix[i][j];
+        }
+        printf("Column %d sum = %d\n", j, sum);
+    }
+}
+
+int main() {
+    int matrix[MAX_ROWS][MAX_COLS];
+    int n, m;
+
+    printf("Enter number of rows (N): ");
+    scanf("%d", &n);
+    printf("Enter number of columns (M): ");
+    scanf("%d", &m);
+
+    if (n <= 0 || m <= 0 || n > MAX_ROWS || m > MAX_COLS) {
+        printf("Invalid matrix size!\n");
+        return 1;
+    }
+
+    readMatrix(matrix, n, m);
+    displayMatrix(matrix, n, m);
+    columnSum(matrix, n, m);
+
+    return 0;
+}
+```
+Output
+```
+Enter number of rows (N): 4
+Enter number of columns (M): 4
+Enter elements of 4x4 matrix:
+Element [0][0]: 1
+Element [0][1]: 2
+Element [0][2]: 4
+Element [0][3]: 5
+Element [1][0]: 6
+Element [1][1]: 7
+Element [1][2]: 8
+Element [1][3]: 9
+Element [2][0]: 1
+Element [2][1]: 2
+Element [2][2]: 4
+Element [2][3]: 5
+Element [3][0]: 6
+Element [3][1]: 7
+Element [3][2]: 8
+Element [3][3]: 9
+
+Matrix:
+1	2	4	5	
+6	7	8	9	
+1	2	4	5	
+6	7	8	9	
+
+Sum of each column:
+Column 0 sum = 14
+Column 1 sum = 18
+Column 2 sum = 24
+Column 3 sum = 28
+```
 
 
 
