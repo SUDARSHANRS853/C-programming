@@ -446,6 +446,257 @@ Output
 Enter a string: nayan
 The string is a palindrome.
 ```
+13. ## Write a program to concatenate two stings. .( Note: Do not use string.h header file)
+```
+#include <stdio.h>
+
+int main() {
+    char str1[100], str2[50];
+    int i = 0, j = 0;
+
+    // Input two strings
+    printf("Enter first string: ");
+    fgets(str1, sizeof(str1), stdin);
+
+    printf("Enter second string: ");
+    fgets(str2, sizeof(str2), stdin);
+
+    // Remove newline from str1 if present
+    while (str1[i] != '\0') {
+        if (str1[i] == '\n') {
+            str1[i] = '\0';
+            break;
+        }
+        i++;
+    }
+
+    // Append str2 to str1
+    while (str2[j] != '\0') {
+        if (str2[j] == '\n') {
+            break;  // skip newline
+        }
+        str1[i] = str2[j];
+        i++;
+        j++;
+    }
+
+    // Null-terminate the result
+    str1[i] = '\0';
+
+    // Output result
+    printf("Concatenated string: %s\n", str1);
+
+    return 0;
+}
+```
+Output
+```
+Enter first string: sudarshan
+Enter second string: gowda
+Concatenated string: sudarshangowda
+```
+14. ##  WAP to construct 5 * 5 matrix and display the contents. Use functions for construction and display of matrix.
+```
+#include <stdio.h>
+
+#define SIZE 5  
+
+
+void constructMatrix(int matrix[SIZE][SIZE]) {
+    printf("Enter elements for a %dx%d matrix:\n", SIZE, SIZE);
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j < SIZE; j++) {
+            printf("Element [%d][%d]: ", i, j);
+            scanf("%d", &matrix[i][j]);
+        }
+    }
+}
+
+
+void displayMatrix(int matrix[SIZE][SIZE]) {
+    printf("\nMatrix content:\n");
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j < SIZE; j++) {
+            printf("%d\t", matrix[i][j]);  
+        }
+        printf("\n");  
+    }
+}
+
+int main() {
+    int matrix[SIZE][SIZE]; 
+    constructMatrix(matrix);
+    displayMatrix(matrix);  
+
+    return 0;
+}
+```
+Output
+```
+Enter elements for a 5x5 matrix:
+Element [0][0]: 4 4
+Element [0][1]: Element [0][2]: 4 4
+Element [0][3]: Element [0][4]: 4 5
+Element [1][0]: Element [1][1]: 5 4
+Element [1][2]: Element [1][3]: 2 4
+Element [1][4]: Element [2][0]: 4 7
+Element [2][1]: Element [2][2]: 3 4
+Element [2][3]: Element [2][4]: 2 3
+Element [3][0]: Element [3][1]: 1 2
+Element [3][2]: Element [3][3]: 5 7
+Element [3][4]: Element [4][0]: 3 5
+Element [4][1]: Element [4][2]: 2 4
+Element [4][3]: Element [4][4]: 1 4
+
+Matrix content:
+4	4	4	4	4	
+5	5	4	2	4	
+4	7	3	4	2	
+3	1	2	5	7	
+3	5	2	4	1	
+```
+15. ## Given a matrix of size NxN, find it’s Transpose.
+```
+#include <stdio.h>
+
+#define MAX 10  
+
+
+void readMatrix(int matrix[MAX][MAX], int n) {
+    printf("Enter elements of %dx%d matrix:\n", n, n);
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            printf("Element [%d][%d]: ", i, j);
+            scanf("%d", &matrix[i][j]);
+        }
+    }
+}
+
+// Function to display matrix
+void displayMatrix(int matrix[MAX][MAX], int n) {
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            printf("%d\t", matrix[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+// Function to find transpose
+void transposeMatrix(int matrix[MAX][MAX], int trans[MAX][MAX], int n) {
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            trans[j][i] = matrix[i][j];
+        }
+    }
+}
+
+int main() {
+    int matrix[MAX][MAX], trans[MAX][MAX];
+    int n;
+
+    printf("Enter the size of the square matrix (N): ");
+    scanf("%d", &n);
+
+    if (n > MAX || n <= 0) {
+        printf("Invalid size. Please enter 1 to %d.\n", MAX);
+        return 1;
+    }
+
+    readMatrix(matrix, n);
+
+    printf("\nOriginal Matrix:\n");
+    displayMatrix(matrix, n);
+
+    transposeMatrix(matrix, trans, n);
+
+    printf("\nTranspose of the Matrix:\n");
+    displayMatrix(trans, n);
+
+    return 0;
+}
+```
+16. ## Given a matrix of size NxN, find it’s Transpose.
+```
+#include <stdio.h>
+
+#define MAX 10  // Maximum allowed size
+
+// Function to read NxN matrix
+void readMatrix(int matrix[MAX][MAX], int n) {
+    printf("Enter elements of %dx%d matrix:\n", n, n);
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            printf("Element [%d][%d]: ", i, j);
+            scanf("%d", &matrix[i][j]);
+        }
+    }
+}
+
+// Function to display matrix
+void displayMatrix(int matrix[MAX][MAX], int n) {
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            printf("%d\t", matrix[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+// Function to find transpose
+void transposeMatrix(int matrix[MAX][MAX], int trans[MAX][MAX], int n) {
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            trans[j][i] = matrix[i][j];
+        }
+    }
+}
+
+int main() {
+    int matrix[MAX][MAX], trans[MAX][MAX];
+    int n;
+
+    printf("Enter the size of the square matrix (N): ");
+    scanf("%d", &n);
+
+    if (n > MAX || n <= 0) {
+        printf("Invalid size. Please enter 1 to %d.\n", MAX);
+        return 1;
+    }
+
+    readMatrix(matrix, n);
+
+    printf("\nOriginal Matrix:\n");
+    displayMatrix(matrix, n);
+
+    transposeMatrix(matrix, trans, n);
+
+    printf("\nTranspose of the Matrix:\n");
+    displayMatrix(trans, n);
+
+    return 0;
+}
+```
+Output
+```
+Enter the size of the square matrix (N): 2
+Enter elements of 2x2 matrix:
+Element [0][0]: 1
+Element [0][1]: 2
+Element [1][0]: 3
+Element [1][1]: 4
+
+Original Matrix:
+1	2	
+3	4	
+
+Transpose of the Matrix:
+1	3	
+2	4	
+```
+
+
+
 
 
 
