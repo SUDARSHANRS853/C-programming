@@ -821,6 +821,58 @@ Output
 Enter a number: 3
 Factorial of 3 is 6
 ```
+19. ## Use recursive calls to evaluate F(x) = x + x3/3! + x5/5! + x7/7!+ …
+```
+#include <stdio.h>
+
+// Recursive function to calculate power: x^n
+double power(double x, int n) {
+    if (n == 0)
+        return 1;
+    else
+        return x * power(x, n - 1);
+}
+
+// Recursive function to calculate factorial: n!
+long factorial(int n) {
+    if (n == 0 || n == 1)
+        return 1;
+    else
+        return n * factorial(n - 1);
+}
+
+// Recursive function to compute F(x) = x + x^3/3! + x^5/5! + ...
+double computeF(double x, int term) {
+    if (term == 0)
+        return 0;
+    else {
+        int powerIndex = 2 * term - 1;  // 1, 3, 5, 7, ...
+        double currentTerm = power(x, powerIndex) / (double)factorial(powerIndex);
+        return currentTerm + computeF(x, term - 1);  // Recursive sum
+    }
+}
+
+int main() {
+    double x;
+    int n;
+
+    printf("Enter the value of x: ");
+    scanf("%lf", &x);
+    printf("Enter number of terms: ");
+    scanf("%d", &n);
+
+    double result = computeF(x, n);
+    printf("F(x) = %.6lf\n", result);
+
+    return 0;
+}
+```
+Output
+```
+Enter the value of x: 3
+Enter number of terms: 2
+F(x) = 7.500000
+```
 
 
 
