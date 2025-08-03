@@ -377,7 +377,38 @@ Output
 ```
 enter a string:"suDARSHAN"
 Uppercase string:"SUDARSHAN"
-````
+```
+11. ## Write a program to read a string from the user and reverse the string.( Note: Do not use string.h header file)
+```
+#include<stdio.h>
+int main()
+{
+    char str[100],temp;
+    int i,len=0;
+    printf("enter the string:");
+    fgets(str,sizeof(str),stdin);
+    while(str[len]!='\0'){
+        if(str[len]=='\n'){
+            str[len]='\0';
+            break;
+        }
+        len++;
+        }
+for(i=0;i<len/2;i++){
+    temp=str[i];
+    str[i]=str[len-1-i];
+    str[len-1-i]=temp;
+}
+printf("reversed string:%s\n",str);
+return 0;
+}
+```
+Output
+```
+enter the string:sudarshn
+reversed string:nhsradus
+```
+
 
 
 
