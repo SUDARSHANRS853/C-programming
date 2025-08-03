@@ -299,4 +299,86 @@ Output
 Enter a string: Sudarshan rs gowda
 Length of the string = 18
 ```
+9. ## Input date, month and year from the user, and using switch case, display inworded format. e.g. input: d=16, m=7, y=1992 Output: 16th July, 1992
+```
+#include<stdio.h>
+const char* getSuffix(int day){
+    if(day>=11 && day<=13){
+        return "th";
+    }
+    switch(day%10){
+        case 1: return "st";
+        case 2:return "nd";
+        case 3: return "rd";
+        default:return "th";
+        
+    }
+}
+int main()
+
+{
+    int day, month,year;
+    printf("enter the day(1-31):");
+    scanf("%d",&day);
+    printf("enter the month(1-12):");
+    scanf("%d",&month);
+    printf("enter the year:");
+    scanf("%d",&year);
+    printf(" %d%s ",day,getSuffix(day));
+    switch (month)
+    {
+        case 1:printf("january");break;
+        case 2:printf("febraury");break;
+        case 3:printf("March");break;
+        case 4:printf("April");break;
+        case 5:printf("May");break;
+        case 6:printf("June");break;
+        case 7:printf("July");break;
+        case 8:printf("August");break;
+        case 9:printf("September");break;
+        case 10:printf("October");break;
+        case 11:printf("November");break;
+        case 12:printf("December");break;
+        default:printf("invalid month");
+        return 1;
+        
+    }
+    printf(" %d\n",year);
+    return 0;
+}
+```
+Output
+```
+enter the day(1-31):4
+enter the month(1-12):8
+enter the year:2025
+ 4th August 2025
+```
+10. ## Write a function that will scan a character string passed as an argument and convertall lower-case characters into their upper-case equivalents.
+```
+#include<stdio.h>
+void toUpperCase(char str[]){
+    for (int i=0;str[i]!='\0';i++){
+        if(str[i]>='a'&& str[i]<='z'){
+            str[i]=str[i]-32;
+        }
+    }
+}
+int main(){
+    char text[100];
+    printf("enter a string:");
+    fgets(text,sizeof(text),stdin);
+    toUpperCase(text);
+    printf("Uppercase string:%s\n",text);
+    return 0;
+}
+```
+Output
+```
+enter a string:"suDARSHAN"
+Uppercase string:"SUDARSHAN"
+````
+
+
+
 
