@@ -790,6 +790,39 @@ Column 1 sum = 18
 Column 2 sum = 24
 Column 3 sum = 28
 ```
+18. ## Write a recursive function for calculating factorial of a number.
+```
+#include <stdio.h>
+
+// Recursive function to calculate factorial
+int factorial(int n) {
+    if (n == 0 || n == 1)
+        return 1;  // Base case
+    else
+        return n * factorial(n - 1);  // Recursive call
+}
+
+int main() {
+    int num;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    if (num < 0)
+        printf("Factorial is not defined for negative numbers.\n");
+    else
+        printf("Factorial of %d is %d\n", num, factorial(num));
+
+    return 0;
+}
+```
+Output
+```
+Enter a number: 3
+Factorial of 3 is 6
+```
+
+
 
 
 
