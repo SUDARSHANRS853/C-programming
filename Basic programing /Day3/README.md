@@ -890,6 +890,93 @@ Output
 ```
 Concatenated number: 1234
 ```
+21. ## Write a menu driven program to display the mathematical functions like square root, natural log, log10x, power(x,n), Cos(x). (use math.h)
+```
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int choice;
+    double x, n, result;
+
+    printf("----- Math Functions Menu -----\n");
+    printf("1. Square Root (√x)\n");
+    printf("2. Natural Log (ln x)\n");
+    printf("3. Log base 10 (log10 x)\n");
+    printf("4. Power (x^n)\n");
+    printf("5. Cosine (cos x)\n");
+    printf("Enter your choice (1-5): ");
+    scanf("%d", &choice);
+
+    switch (choice) {
+        case 1:
+            printf("Enter value of x: ");
+            scanf("%lf", &x);
+            if (x < 0)
+                printf("Square root of negative number is not real.\n");
+            else {
+                result = sqrt(x);
+                printf("Square root of %.2lf = %.4lf\n", x, result);
+            }
+            break;
+
+        case 2:
+            printf("Enter value of x: ");
+            scanf("%lf", &x);
+            if (x <= 0)
+                printf("Natural log undefined for zero or negative values.\n");
+            else {
+                result = log(x);
+                printf("Natural log of %.2lf = %.4lf\n", x, result);
+            }
+            break;
+
+        case 3:
+            printf("Enter value of x: ");
+            scanf("%lf", &x);
+            if (x <= 0)
+                printf("Log base 10 undefined for zero or negative values.\n");
+            else {
+                result = log10(x);
+                printf("Log base 10 of %.2lf = %.4lf\n", x, result);
+            }
+            break;
+
+        case 4:
+            printf("Enter base x: ");
+            scanf("%lf", &x);
+            printf("Enter exponent n: ");
+            scanf("%lf", &n);
+            result = pow(x, n);
+            printf("%.2lf raised to the power %.2lf = %.4lf\n", x, n, result);
+            break;
+
+        case 5:
+            printf("Enter angle in radians: ");
+            scanf("%lf", &x);
+            result = cos(x);
+            printf("Cos(%.2lf) = %.4lf\n", x, result);
+            break;
+
+        default:
+            printf("Invalid choice! Please select between 1 and 5.\n");
+    }
+
+    return 0;
+}
+```
+Output
+```
+----- Math Functions Menu -----
+1. Square Root (√x)
+2. Natural Log (ln x)
+3. Log base 10 (log10 x)
+4. Power (x^n)
+5. Cosine (cos x)
+Enter your choice (1-5): 1
+Enter value of x: 4
+Square root of 4.00 = 2.0000
+```
 
 
 
