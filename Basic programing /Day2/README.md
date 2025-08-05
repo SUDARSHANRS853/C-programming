@@ -290,7 +290,193 @@ Enter two digit number whose add up to 9:
  81
  90
 ```
+10. ## Generate the first 'N' prime numbers. For Eg. If N=5 then 2,3,5,7,11
+```
+#include<stdio.h>
+int main()
+{
+int n,count=0,num=2,i,isprime;
+printf("enter the number of prime numbers to genrate: ");
+scanf("%d", &n);
+printf("first %d prime numbers",n);
+while(count<n){
+isprime=1;
+for(i=2;i*i<=num;i++){
+if(num%i==0){
+isprime=0;
+break;
+}
+}
+if(isprime){
+printf("%d ",num);
+count++;
+}
+num++;
+}
+return 0;
+}
+```
+Output
+```
+enter the number of prime numbers to genrate: 10
+first 10 prime numbers2 3 5 7 11 13 17 19 23 29
+```
+11. ## Generate the  prime numbers with in range of 100 ,(0-100)
+```
+#include<stdio.h>
+int main()
+{
+int i,j,isprime,n;
+printf("enter the value of n:");
+scanf("%d",&n);
+printf("prime numbers up to%d are:\n",n);
+for(i=2;i<=n;i++){
+isprime=1;
+for(j=2;j*j<=i;j++){
+if(i%j==0){
+isprime=0;
+break;
+}
+}
+if(isprime)
+printf("%d ",i);
+}
+return 0;
+}
+```
+Output
+```
+enter the value of n:100
+prime numbers up to100 are:
+2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97
+```
+12.  ## enter the number1232132 enter the digit to count2 digit 2 occurs 3 times in 1232132. 
+```
+#include<stdio.h>
+int main(){
+int number,digit,count=0,remainder;
+printf("enter the number");
+scanf("%d",&number);
+printf("enter the digit to count");
+scanf("%d",&digit);
+int temp=number;
+while(temp>0){
+remainder=temp%10;
+if(remainder==digit){
+count++;
+}
+temp/=10;
+}
+printf("digit %d occurs %d times in %d. \n",digit,count,number);
+return 0;
+}
+```
+Output
+```
+enter the number1232132
+enter the digit to count2
+digit 2 occurs 3 times in 1232132.
+```
+13. ## Write a C program to display and find the sum of the series 1+11+111+....111 up to n.For eg. if n=4, the series is:1+11+111+1111. Take the value of 'n' as input from the user
+```
+#include<stdio.h>
+int main()
+{
+int n, i;
+long sum=0,term=0;
+printf("enter the number of terms:");
+scanf("%d", &n);
+printf("the series is: ");
+for(i=1;i<=n;i++){
+term=term*10+1;
+printf("%1d", term);
+sum +=term;
+if(i!=n)
+printf(" + ");
+}
+printf("\nsum of series is %1d\n",sum);
+return 0;
+}
+```
+Output
+```
+enter the number of terms:5
+the series is: 1 + 11 + 111 + 1111 + 11111
+sum of series is 12345
+```
+14. ## A number is called an Armstrong number if the sum of the cubes of the digits of the number is equal to the number. For example 153 = 1^3 + 5^3 + 3^3. Write a C program that asks the user to enter a number and returns if it is Armstrong or not.
+```
+#include<stdio.h>
+int main()
+{
+int num,originalNum,remainder,result=0;
+printf("enter the number ");
+scanf("%d",&num);
+originalNum=num;
+while(num!=0){
+remainder=num%10;
+result+=remainder*remainder*remainder;
+num/=10;
+}
+if(result==originalNum)
+printf("%d is an Armstrong number.\n",originalNum);
+else
+printf("%d is not an Armstrong number.\n",originalNum);
 
+return 0;
+}
+```
+Output
+```
+enter the number 153
+153 is an Armstrong number.
+enter the number 1234
+1234 is not an Armstrong number.
+```
+15. ## Amicable numbers are found in pairs. A given pair of numbers is Amicable if the sumof the proper divisors (not including itself) of one number is equal to the other numberand vice – versa.For example 220 & 284 are amicable numbers. First we find the proper divisors of220:220:1, 2, 4, 5, 10, 11, 20, 22, 44, 55, 110; 1+ 2 + 4 + 5 + 10 + 11 + 20 + 22 + 44 + 55+ 110 = 284Now, 284: 1, 2, 4, 71, 142; 1 + 2 + 4 + 71 + 142 = 220Write a C program to check that the input pair of numbers is amicable
+```
+#include <stdio.h>
+
+// Function to calculate the sum of proper divisors of a number
+int sumOfProperDivisors(int num) {
+    int sum = 0;
+    for (int i = 1; i <= num / 2; i++) {
+        if (num % i == 0)
+            sum += i;
+    }
+    return sum;
+}
+
+int main() {
+    int num1, num2;
+
+    // Taking input from the user
+    printf("Enter first number: ");
+    scanf("%d", &num1);
+
+    printf("Enter second number: ");
+    scanf("%d", &num2);
+
+    // Calculating the sum of proper divisors
+    int sum1 = sumOfProperDivisors(num1);
+    int sum2 = sumOfProperDivisors(num2);
+
+    // Checking if the numbers are amicable
+    if (sum1 == num2 && sum2 == num1) {
+        printf("%d and %d are Amicable Numbers.\n", num1, num2);
+    } else {
+        printf("%d and %d are NOT Amicable Numbers.\n", num1, num2);
+    }
+
+    return 0;
+}
+```
+Output
+```
+Enter first number: 220
+Enter second number: 284
+220 and 284 are Amicable Numbers.
+```
 
 
 
