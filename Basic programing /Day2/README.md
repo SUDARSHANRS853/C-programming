@@ -477,6 +477,315 @@ Enter first number: 220
 Enter second number: 284
 220 and 284 are Amicable Numbers.
 ```
+16. ## Write a menu driven program to read two integers & find their sum, difference & product.
+```
+#include <stdio.h>
+
+int main() {
+    int num1, num2, choice;
+    int result;
+
+    // Input two integers
+    printf("Enter the first number: ");
+    scanf("%d", &num1);
+
+    printf("Enter the second number: ");
+    scanf("%d", &num2);
+
+    // Displaying menu
+    printf("\n--- MENU ---\n");
+    printf("1. Sum\n");
+    printf("2. Difference\n");
+    printf("3. Product\n");
+    printf("Enter your choice (1-3): ");
+    scanf("%d", &choice);
+
+    // Switch case to perform selected operation
+    switch (choice) {
+        case 1:
+            result = num1 + num2;
+            printf("Sum = %d\n", result);
+            break;
+
+        case 2:
+            result = num1 - num2;
+            printf("Difference = %d\n", result);
+            break;
+
+        case 3:
+            result = num1 * num2;
+            printf("Product = %d\n", result);
+            break;
+
+        default:
+            printf("Invalid choice! Please enter 1, 2 or 3.\n");
+    }
+
+    return 0;
+}
+```
+Output
+```
+Enter the first number: 345
+Enter the second number: 345
+
+--- MENU ---
+1. Sum
+2. Difference
+3. Product
+Enter your choice (1-3): 1
+Sum = 690
+```
+17. ## Write a C program to calculate the volume of the following shapes: Cube, Cuboid,Sphere, Cylinder and Cone. Ask the user which one s/he wants to calculate, and takethe appropriate required inputs. Then print the result. The input should be taken in themain function and calculations for every solid should be done in a separate function by passing appropriate arguments.Example: If the user chooses the option for cube, only one input is required i.e., theside. The volume is then calculated and printed.If the user chooses the option for cuboid, only three inputs are required i.e., length,breadth and height. The volume is then calculated and printed.
+```
+#include <stdio.h>
+#define PI 3.14159
+
+// Function to calculate volume of a cube
+float volumeCube(float side) {
+    return side * side * side;
+}
+
+// Function to calculate volume of a cuboid
+float volumeCuboid(float length, float breadth, float height) {
+    return length * breadth * height;
+}
+
+// Function to calculate volume of a sphere
+float volumeSphere(float radius) {
+    return (4.0 / 3.0) * PI * radius * radius * radius;
+}
+
+// Function to calculate volume of a cylinder
+float volumeCylinder(float radius, float height) {
+    return PI * radius * radius * height;
+}
+
+// Function to calculate volume of a cone
+float volumeCone(float radius, float height) {
+    return (1.0 / 3.0) * PI * radius * radius * height;
+}
+
+int main() {
+    int choice;
+    float side, length, breadth, height, radius;
+
+    // Display Menu
+    printf("Select the shape to calculate volume:\n");
+    printf("1. Cube\n");
+    printf("2. Cuboid\n");
+    printf("3. Sphere\n");
+    printf("4. Cylinder\n");
+    printf("5. Cone\n");
+    printf("Enter your choice (1-5): ");
+    scanf("%d", &choice);
+
+    switch (choice) {
+        case 1:
+            // Cube
+            printf("Enter the side of the cube: ");
+            scanf("%f", &side);
+            printf("Volume of Cube = %.2f\n", volumeCube(side));
+            break;
+
+        case 2:
+            // Cuboid
+            printf("Enter length, breadth, and height of the cuboid: ");
+            scanf("%f %f %f", &length, &breadth, &height);
+            printf("Volume of Cuboid = %.2f\n", volumeCuboid(length, breadth, height));
+            break;
+
+        case 3:
+            // Sphere
+            printf("Enter the radius of the sphere: ");
+            scanf("%f", &radius);
+            printf("Volume of Sphere = %.2f\n", volumeSphere(radius));
+            break;
+
+        case 4:
+            // Cylinder
+            printf("Enter the radius and height of the cylinder: ");
+            scanf("%f %f", &radius, &height);
+            printf("Volume of Cylinder = %.2f\n", volumeCylinder(radius, height));
+            break;
+
+        case 5:
+            // Cone
+            printf("Enter the radius and height of the cone: ");
+            scanf("%f %f", &radius, &height);
+            printf("Volume of Cone = %.2f\n", volumeCone(radius, height));
+            break;
+
+        default:
+            printf("Invalid choice! Please enter a number between 1 and 5.\n");
+    }
+
+    return 0;
+}
+```
+Output
+```
+Select the shape to calculate volume:
+1. Cube
+2. Cuboid
+3. Sphere
+4. Cylinder
+5. Cone
+Enter your choice (1-5): 1
+Enter the side of the cube: 3
+Volume of Cube = 27.00
+```
+18. ## . An Electricity board charges the following rates for use of electricity. For the First 200 units : Rs 5 per unitFor the next 100 units : Rs7 per unit Beyond 300 units : Rs 10 Per unit.Write a C Program to read no of units consumed and print out total charge amount.
+```
+#include <stdio.h>
+
+int main() {
+    int units;
+    float total = 0;
+
+    // Input: number of units
+    printf("Enter the number of units consumed: ");
+    scanf("%d", &units);
+
+    // Calculate bill based on slabs
+    if (units <= 200) {
+        total = units * 5;
+    } else if (units <= 300) {
+        total = (200 * 5) + ((units - 200) * 7);
+    } else {
+        total = (200 * 5) + (100 * 7) + ((units - 300) * 10);
+    }
+
+    // Output total charge
+    printf("Total charge for %d units is: ₹%.2f\n", units, total);
+
+    return 0;
+}
+```
+Output
+```
+Enter the number of units consumed: 120
+Total charge for 120 units is: ₹600.00
+```
+19. ## WAP to convert a binary number to decimal and vice versa.
+```
+#include <stdio.h>
+#include <math.h>
+
+// Function to convert binary to decimal
+int binaryToDecimal(long long binary) {
+    int decimal = 0, base = 1, rem;
+    
+    while (binary > 0) {
+        rem = binary % 10;
+        decimal += rem * base;
+        binary /= 10;
+        base *= 2;
+    }
+    return decimal;
+}
+
+// Function to convert decimal to binary
+long long decimalToBinary(int decimal) {
+    long long binary = 0;
+    int rem, base = 1;
+
+    while (decimal > 0) {
+        rem = decimal % 2;
+        binary += rem * base;
+        decimal /= 2;
+        base *= 10;
+    }
+    return binary;
+}
+
+int main() {
+    int choice;
+    long long binary;
+    int decimal;
+
+    printf("Menu:\n");
+    printf("1. Binary to Decimal\n");
+    printf("2. Decimal to Binary\n");
+    printf("Enter your choice (1 or 2): ");
+    scanf("%d", &choice);
+
+    switch (choice) {
+        case 1:
+            printf("Enter a binary number: ");
+            scanf("%lld", &binary);
+            printf("Decimal equivalent: %d\n", binaryToDecimal(binary));
+            break;
+
+        case 2:
+            printf("Enter a decimal number: ");
+            scanf("%d", &decimal);
+            printf("Binary equivalent: %lld\n", decimalToBinary(decimal));
+            break;
+
+        default:
+            printf("Invalid choice!\n");
+    }
+
+    return 0;
+}
+```
+Output
+```
+Menu:
+1. Binary to Decimal
+2. Decimal to Binary
+Enter your choice (1 or 2): 1
+Enter a binary number: 1010
+Decimal equivalent: 10
+```
+20. ## Generate a sequence of numbers such that every number in the sequence is the sum ofthe previous three numbers. The first three numbers are 0,0,1.
+```
+#include <stdio.h>
+
+int main() {
+    int n;
+    long long a = 0, b = 0, c = 1, next;
+
+    // Get number of terms from user
+    printf("Enter the number of terms to generate: ");
+    scanf("%d", &n);
+
+    // Check if at least 3 terms are needed
+    if (n < 1) {
+        printf("Please enter a positive number.\n");
+        return 0;
+    }
+
+    printf("Sequence: ");
+
+    for (int i = 1; i <= n; i++) {
+        if (i == 1) {
+            printf("%lld ", a);
+        } else if (i == 2) {
+            printf("%lld ", b);
+        } else if (i == 3) {
+            printf("%lld ", c);
+        } else {
+            next = a + b + c;
+            printf("%lld ", next);
+            a = b;
+            b = c;
+            c = next;
+        }
+    }
+
+    printf("\n");
+    return 0;
+}
+```
+Output
+```
+Enter the number of terms to generate: 10
+Sequence: 0 0 1 1 2 4 7 13 24 44 
+```
+
+
 
 
 
