@@ -1,3 +1,4 @@
+1. ## from one matrix to another matrix conversion
 ```
 #include<stdio.h>
 int main()
@@ -43,6 +44,47 @@ The obtained matrix is:
 5	6	7	8	
 11	12	13	14	
 Transpose of matrix is:
+1	5	11	
+2	6	12	
+3	7	13	
+4	8	14	
+
+
+=== Code Execution Successful ===
+```
+2. ## Direct transpose method
+```
+#include<stdio.h>
+int main()
+{
+    int a[3][4],i,j;
+    printf("enter the elements of matrix:");
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<4;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+      
+    }
+    
+    
+    for(i=0;i<4;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            printf("%d\t",a[j][i]);
+        }
+        printf("\n");
+        
+    }
+   
+    return 0;
+}
+```
+Output
+```
+enter the elements of matrix:1 2 3 4 5 6 7 8 11 12 13 14
 1	5	11	
 2	6	12	
 3	7	13	
