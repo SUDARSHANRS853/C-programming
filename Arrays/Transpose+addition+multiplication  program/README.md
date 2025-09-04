@@ -61,6 +61,8 @@ int main()
     
 }
 ```
+Output
+```
 enter the elementd of the maatrix:
 1 2 3 4 5 6 7 8 9
 elements of matrix is :
