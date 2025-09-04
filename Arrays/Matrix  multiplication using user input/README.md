@@ -66,3 +66,25 @@ int main()
     }
 }
 ```
+Output
+```
+enter the number of rows and number of columns for first matrix:3 3 
+enter the number of rows and number of columns in second matrix:3 3
+enter the elements of the matrix A:1 2 3 4 5 6 7 8 9
+Matrix A is:
+1	2	3	
+4	5	6	
+7	8	9	
+entere the elements of matrix B:1 2 3 4 5 6 7 8 9
+Matrix B is:
+1	2	3	
+4	5	6	
+7	8	9	
+Product of two matrix is:
+30	36	42	
+66	81	96	
+102	126	150	
+
+
+=== Code Execution Successful ===
+```
