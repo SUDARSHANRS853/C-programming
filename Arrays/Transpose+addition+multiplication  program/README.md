@@ -61,3 +61,25 @@ int main()
     
 }
 ```
+enter the elementd of the maatrix:
+1 2 3 4 5 6 7 8 9
+elements of matrix is :
+1	2	3	
+4	5	6	
+7	8	9	
+transpose of the matrix is:
+1	4	7	
+2	5	8	
+3	6	9	
+sum of two matrix is:
+2	4	6	
+8	10	12	
+14	16	18	
+Product of two matrix is:
+14	32	50	
+32	77	122	
+50	122	194	
+
+
+=== Code Execution Successful ===
+```
