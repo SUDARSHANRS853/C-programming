@@ -1,5 +1,12 @@
 Here is the Merge sort
 ```
+MergeSort(A,lb,up)
+{
+if(lb<up)
+{
+mid=(lb+ub)/2;
+mergesort(Alb,mid);
+mergesort(A,mid+1,ub);
 merge(A,lb,mid,ub)
 {
   i=lb;
