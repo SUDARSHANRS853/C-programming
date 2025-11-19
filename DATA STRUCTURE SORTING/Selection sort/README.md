@@ -1,3 +1,6 @@
+```
+Selection Sort is a simple sorting algorithm that works by repeatedly selecting the smallest element from the unsorted portion of the list and placing it at the beginning. In each pass, the algorithm finds the minimum value and swaps it with the first unsorted element. This process continues until the entire list is sorted.
+```
 Here there is selection sort
 ```
 #include <stdio.h>
