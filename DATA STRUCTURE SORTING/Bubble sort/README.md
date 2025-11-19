@@ -1,6 +1,7 @@
 ```
-Bubble Sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them
- if they are in the wrong order. This process is repeated until no more swaps are needed, indicating that the list is sorted.\
+Bubble Sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements, and
+swaps them if they are in the wrong order. This process is repeated until no more swaps are needed, indicating
+that the list is sorted.
 ```
 
 Here  we are doing bubble sort logic 
