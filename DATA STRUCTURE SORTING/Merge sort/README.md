@@ -1,6 +1,9 @@
 ## Definition
 ```
-Merge Sort is a divide-and-conquer sorting algorithm. It works by recursively dividing the array into two halves, sorting each half, and then merging the two sorted halves into a single sorted list. Its time complexity is O(n log n) in all cases and it is a stable sorting technique.
+Merge Sort is a divide-and-conquer sorting algorithm. It works by recursively dividing
+the array into two halves, sorting each half, and then merging the two sorted halves into
+a single sorted list. Its time complexity is O(n log n) in all cases and it is a stable
+sorting technique.
 ```
 
 
