@@ -15,26 +15,36 @@ void swap(int *a, int *b) {
 }
 
 int partition(int arr[], int low, int high) {
-    int pivot = arr[high];      // pivot = last element
-    int i = low - 1;            // boundary of smaller elements
+    int pivot = arr[low];     // pivot = FIRST element
+    int i = low + 1;
+    int j = high;
 
-    for (int j = low; j < high; j++) {
-        if (arr[j] < pivot) {   // if element is smaller than pivot
-            i++;                // expand small zone
+    while (i <= j) {
+        // move i until element > pivot
+        while (i <= high && arr[i] <= pivot)
+            i++;
+
+        // move j until element < pivot
+        while (arr[j] > pivot)
+            j--;
+
+        // swap elements on wrong side
+        if (i < j)
             swap(&arr[i], &arr[j]);
-        }
     }
 
-    swap(&arr[i + 1], &arr[high]);  // place pivot in correct position
-    return (i + 1);                 // return pivot index
+    // place pivot in correct position
+    swap(&arr[low], &arr[j]);
+
+    return j;  // correct position of pivot
 }
 
 void quickSort(int arr[], int low, int high) {
     if (low < high) {
-        int p = partition(arr, low, high);  // partition the array
+        int p = partition(arr, low, high);
 
-        quickSort(arr, low, p - 1);         // left side
-        quickSort(arr, p + 1, high);        // right side
+        quickSort(arr, low, p - 1);
+        quickSort(arr, p + 1, high);
     }
 }
 
@@ -48,6 +58,7 @@ int main() {
     for (int i = 0; i < n; i++) {
         printf("%d ", arr[i]);
     }
+
     return 0;
 }
 
